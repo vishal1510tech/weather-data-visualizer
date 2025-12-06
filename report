@@ -1,0 +1,58 @@
+# Weather Data Analysis Report
+
+## 1. Introduction
+
+This report summarizes the analysis of a real-world weather dataset using Python, Pandas, NumPy, and Matplotlib.  
+The goal is to understand local climate patterns and visualize trends in temperature, rainfall, and humidity.[web:60][web:62]
+
+## 2. Dataset Description
+
+- Source: Open weather dataset (e.g., Delhi daily climate / climate time series from Kaggle).[web:41][web:64]
+- Period covered: Daily observations for multiple years (depending on chosen dataset).
+- Main variables used:
+  - Date (converted to datetime)
+  - Temperature (°C)
+  - Rainfall (mm)
+  - Humidity (%)
+
+Missing values were handled by dropping rows with NaN in key columns, and the cleaned data was saved as `data/cleanstats.csv`.
+
+## 3. Statistical Summary
+
+Using NumPy and Pandas:
+
+- Daily temperature mean, minimum, maximum, and standard deviation were computed.
+- Monthly aggregates (mean, min, max, std) were calculated using `groupby` and/or `resample`.
+- Optional: Seasonal statistics were computed by grouping data by quarter or custom seasons.[web:58][web:60]
+
+These summaries help describe how hot or cold the location is on average, and how much variability exists across time.
+
+## 4. Visualizations
+
+Several Matplotlib plots were created to tell the story of the weather data:[web:62][web:65]
+
+- **Daily temperature line chart** (`images/temp_line.png`):  
+  Shows how temperature changes day by day and highlights overall warming/cooling periods.
+
+- **Monthly rainfall bar chart** (`images/rainfall_bar.png`):  
+  Displays total rainfall per month, making it easy to identify monsoon or dry months.
+
+- **Humidity vs temperature scatter plot** (`images.png`):  
+  Shows the relationship between humidity and temperature; points may suggest that very high temperatures often correspond to lower humidity.
+
+- **Combined subplot figure** (`images.png`):  
+  Combines multiple plots in one figure to compare variables side by side.
+
+## 5. Key Insights and Trends
+
+Based on the plots and statistics:
+
+- Temperature tends to be higher in the summer months and lower in the winter months, with noticeable peaks and troughs over the year.
+- Rainfall is concentrated in a few months (monsoon season), while some months have very little or no rain.
+- The scatter plot suggests a general trend where very hot days often have lower humidity, while moderate temperatures can have higher humidity levels.
+- A few days show extreme rainfall or unusual temperature values, which may indicate weather events or possible measurement anomalies.
+
+## 6. Conclusion
+
+The weather data visualizer successfully loads, cleans, analyzes, and visualizes real-world weather data.  
+The results provide a clear picture of local climate behavior and can support climate awareness and sustainability discussions on campus.
